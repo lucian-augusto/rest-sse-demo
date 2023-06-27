@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      javax:
+#        persistence:
+#          schema-generation.create: metadata
+#          scripts:
+#            action: create
+#            create-target: create_database.sql
+    show-sql: true
+
+  h2:
+    console.enabled: true
+
+  liquibase:
+    change-log: classpath:db/changelog.xml
